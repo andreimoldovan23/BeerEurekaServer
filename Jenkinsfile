@@ -4,7 +4,7 @@ node{
     }
 
     stage('Build Project'){
-        sh 'sudo mvn clean install'
+        sh 'mvn clean install'
     }
 
     stage('Build Docker Image'){
