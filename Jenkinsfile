@@ -19,7 +19,7 @@ node{
     }
 
     stage('Run Container'){
-        sh 'docker rm --force eurekaserver'
-        sh 'docker run --name eurekaserver -p 8761:8761 moldoandrei/beer-eureka-server'
+        sh 'sudo docker rm --force eurekaserver'
+        sh 'sudo docker run --name eurekaserver -p 8761:8761 moldoandrei/beer-eureka-server'
     }
 }
