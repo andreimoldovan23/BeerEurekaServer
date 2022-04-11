@@ -4,7 +4,7 @@ node{
     }
 
     stage('Build Project'){
-        sh 'mvn clean install'
+        sh 'mvn clean package'
     }
 
     stage('Build Docker Image'){
@@ -20,6 +20,6 @@ node{
 
     stage('Run Container'){
         sh 'sudo docker rm --force eurekaserver'
-        sh 'sudo docker run --name eurekaserver -p 8761:8761 moldoandrei/beer-eureka-server'
+        sh 'sudo docker run -d --name eurekaserver -p 8761:8761 moldoandrei/beer-eureka-server'
     }
 }
